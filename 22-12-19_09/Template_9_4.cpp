@@ -64,10 +64,14 @@ int main()
 {
     Basis basis{};
     basis.print(cout); // Basisaufruf
+    // 8: wie in print() und wert() definiert
     Print print{};
     print.print(cout); // ueberschrieben
+    // 8: Print enthält keine eigene wert()-Funktion und ruft die von Basis auf
     Wert wert{};
     wert.print(cout); // noch nicht Bekanntes
+    // 8: Wert enthält keine eigene print()-Funktion und ruft die von Basis auf
     Beides print_und_wert{};
     print_und_wert.print(cout); // alles ueberschrieben
+    // 11: enthält print() und wert(); funktioniert wie erwartet
 }
